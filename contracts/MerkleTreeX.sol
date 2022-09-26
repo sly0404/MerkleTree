@@ -5,10 +5,10 @@ import "./MerkleTree.sol";
 contract MerkleTreeX is MerkleTree
 {
    string[] public transactions = [
-        "TX1: Scherlock -> John",
-        "TX2: John -> Sherlock",
-        "TX3: John -> Mary",
-        "TX4: Mary -> Sherlock"
+        "Transaction 1",
+        "Transaction 2",
+        "Transaction 3",
+        "Transaction 4"
     ];
 
    constructor ()

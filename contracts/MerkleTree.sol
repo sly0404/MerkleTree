@@ -10,7 +10,7 @@ contract MerkleTree
    {
       for(uint i = 0; i < transactions.length; i++) 
       {
-            hashesArray.push(makeHash(transactions[i]));  
+            hashesArray.push(computeHash(transactions[i]));  
       }
       uint count = transactions.length;
       uint offset = 0;
@@ -26,7 +26,7 @@ contract MerkleTree
       }
    }
 
-   function makeHash(string memory transaction) private pure returns(bytes32) 
+   function computeHash(string memory transaction) private pure returns(bytes32) 
    {
       return keccak256(abi.encodePacked(transaction));
    }
@@ -48,7 +48,7 @@ contract MerkleTree
 
    function processProof(bytes32[] memory proofs, string memory leaf, uint index) private pure returns (bytes32) 
    {
-      bytes32 computedRoot = makeHash(leaf);
+      bytes32 computedRoot = computeHash(leaf);
       for (uint i = 0; i < proofs.length; i++)
       {
          bytes32 parentHash;

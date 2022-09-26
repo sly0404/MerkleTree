@@ -16,9 +16,9 @@ contract TestMerkleTree
 
     function testValidTransaction() public
     {
-        string memory transaction = "TX3: John -> Mary";
-        bytes32 hash_1 = 0x69a40d72d1258df801a7ae1e36dd586717a112334f8d9ca4664a339168874ef5;
-        bytes32 hash_2 = 0x83d2dbc9a1246936e38d7f1d4de7709616ac8c32e5159f4a79b5587800249d24;
+        string memory transaction = "Transaction 3";
+        bytes32 hash_1 = 0x981672dae76b76aaa21abb38af581e352d1e5776d06c678f25a06a318973b52f;
+        bytes32 hash_2 = 0x14e8fea86da5954e0dcad105cb4a1b5fa24c84ca676f1fdcbcfbfc12897264ec;
         proofs = [hash_1,hash_2];
         
         uint index = 2;
@@ -27,9 +27,9 @@ contract TestMerkleTree
 
     function testUnvalidTransaction() public
     {
-        string memory transaction = "TX3: John -> Maryx";
-        bytes32 hash_1 = 0x69a40d72d1258df801a7ae1e36dd586717a112334f8d9ca4664a339168874ef5;
-        bytes32 hash_2 = 0x83d2dbc9a1246936e38d7f1d4de7709616ac8c32e5159f4a79b5587800249d24;
+        string memory transaction = "Transaction 5";
+        bytes32 hash_1 = 0x981672dae76b76aaa21abb38af581e352d1e5776d06c678f25a06a318973b52f;
+        bytes32 hash_2 = 0x14e8fea86da5954e0dcad105cb4a1b5fa24c84ca676f1fdcbcfbfc12897264ec;
         proofs = [hash_1,hash_2];
         uint index = 2;
         Assert.isFalse(merkleTreeX.isValidTransaction(proofs,transaction,index), errorValidMerkleTreeRoot);

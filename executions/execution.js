@@ -48,3 +48,28 @@ token.concatHashes('0x3ac225168df54212a25c1c01fd35bebfea408fdac2e31ddd6f80a4bbf9
  token.processProof(['0x69a40d72d1258df801a7ae1e36dd586717a112334f8d9ca4664a339168874ef5','0x83d2dbc9a1246936e38d7f1d4de7709616ac8c32e5159f4a79b5587800249d24'],"TX3: John -> Mary",2)
  token.isValidTransaction(['0x69a40d72d1258df801a7ae1e36dd586717a112334f8d9ca4664a339168874ef5','0x83d2dbc9a1246936e38d7f1d4de7709616ac8c32e5159f4a79b5587800249d24'],"TX3: John -> Mary",2)
 
+
+
+
+ token = await MerkleTreeX.deployed()
+ transactions = [
+  "Transaction 1",
+  "Transaction 2",
+  "Transaction 3",
+  "Transaction 4"
+];
+
+token.getHashesArray()
+-> 
+[
+  '0x288be0d128e3400b2eb93a495532830b851937311390b747ac9edc6e073fc0a1',
+  '0x8472cf808923d4b3686e1a6007e11a4558690c55b1b0721e67d77d10302e9583',
+  '0x10df40cc6c596a81db3c5e640ab95f9781cc91df7a4f47af9dca6607b6c585bd',
+  '0x981672dae76b76aaa21abb38af581e352d1e5776d06c678f25a06a318973b52f',
+  '0x14e8fea86da5954e0dcad105cb4a1b5fa24c84ca676f1fdcbcfbfc12897264ec',
+  '0x08b1fc2cf1562a229b24da04106e93f097f80d9139e4577c8e86375bc0c1dcd1',
+  '0x790b4a1412fdcd863d08ecd1465da593b65b249f9a10ddd7c3bd8e8d2d38c11b'
+]
+
+
+
