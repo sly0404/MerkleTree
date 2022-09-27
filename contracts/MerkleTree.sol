@@ -46,7 +46,7 @@ contract MerkleTree
       return hashesArray[hashesArray.length - 1];
    }
 
-   function verifyProof(bytes32[] memory proofs, string memory leaf, uint index) private pure returns (bytes32) 
+   function computeRoot(bytes32[] memory proofs, string memory leaf, uint index) private pure returns (bytes32) 
    {
       bytes32 computedRoot = computeHash(leaf);
       for (uint i = 0; i < proofs.length; i++)
@@ -64,7 +64,7 @@ contract MerkleTree
 
    function isValidTransaction(bytes32[] memory proofs, string memory leaf, uint index) external view returns (bool)
    {
-      bytes32 computedRoot = verifyProof(proofs, leaf, index);
+      bytes32 computedRoot = computeRoot(proofs, leaf, index);
       return computedRoot == getMerkleTreeRoot();
    }
 }
