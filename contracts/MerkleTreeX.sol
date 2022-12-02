@@ -10,6 +10,7 @@ contract MerkleTreeX is MerkleTree
         "Transaction 3",
         "Transaction 4"
     ];
+    
 
    constructor ()
    MerkleTree(transactions) public
